@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+}
+body
+{
+    margin: 0px;
+    padding: 0px;
+}
+.toolbox-container
+{
+    background-color: bisque;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.toolbox-priority-container
+{
+    background-color: darkgray;
+    height: 3rem;
+    width: 18rem;
+    margin-left: 5rem;
+}
+
+.action-btn-container
+{
+    height: 3rem;
+    background-color: beige;
+    width: 10rem;
+    margin-left: 5rem;
+}
