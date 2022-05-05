@@ -8,7 +8,7 @@ body
 }
 .toolbox-container
 {
-    background-color:darkslategrey;
+    background-color:rgb(111, 170, 23);
     height: 5rem;
     display: flex;
     align-items: center;
@@ -31,6 +31,9 @@ body
     background-color: beige;
     width: 10rem;
     margin-left: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .color
@@ -57,4 +60,14 @@ body
 .lightgrey
 {
     background-color: lightgrey;
+}
+
+.add-btn
+{
+    font-size: 1.5rem;
+}
+
+.delete-btn
+{
+    font-size: 1.5rem;
 }
