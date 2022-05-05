@@ -8,7 +8,7 @@ body
 }
 .toolbox-container
 {
-    background-color: bisque;
+    background-color:darkslategrey;
     height: 5rem;
     display: flex;
     align-items: center;
@@ -16,6 +16,9 @@ body
 
 .toolbox-priority-container
 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     background-color: beige;
     height: 3rem;
     width: 18rem;
@@ -28,4 +31,30 @@ body
     background-color: beige;
     width: 10rem;
     margin-left: 5rem;
+}
+
+.color
+{
+    height: 1.5rem;
+    width: 3rem;
+}
+
+.lightpink
+{
+    background-color: lightpink;
+}
+
+.lightblue
+{
+    background-color: lightskyblue;
+}
+
+.lightgreen
+{
+    background-color: lightgreen;
+}
+
+.lightgrey
+{
+    background-color: lightgrey;
 }
