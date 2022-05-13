@@ -78,8 +78,9 @@ body
     display: none;
     height: 35vh;
     width: 50vw;
-    margin-top: 15vw;
-    margin-left: 23rem;
+    position: absolute;
+    top: 15rem;
+    left: 25rem;
 }
 
 .textarea-cont
@@ -109,3 +110,36 @@ body
     width: 5.5rem;
 }
 
+.main-cont
+{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.ticket-cont
+{
+    background-color: beige;
+    height: 10rem;
+    width: 15rem;
+}
+
+.ticket-color
+{
+    height: 1rem;
+    background-color: lightpink;
+}
+
+.ticket-id
+{
+    height: 1rem;
+}
+
+.task-area
+{
+    height: calc(100%-1rem-1.5rem);
+    padding: 5px;
+    font-size: 1.25rem;
+}
