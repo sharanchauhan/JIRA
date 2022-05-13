@@ -8,7 +8,7 @@ body
 }
 .toolbox-container
 {
-    background-color:rgb(111, 170, 23);
+    background-color:yellowgreen;
     height: 5rem;
     display: flex;
     align-items: center;
@@ -71,3 +71,41 @@ body
 {
     font-size: 1.5rem;
 }
+
+.modal-cont
+{
+    background-color: beige;
+    display: none;
+    height: 35vh;
+    width: 50vw;
+    margin-top: 15vw;
+    margin-left: 23rem;
+}
+
+.textarea-cont
+{
+    outline: none;
+    resize: none;
+    border: none;
+    background-color:yellowgreen;
+    height: 100%;
+    width: 75%;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.priority-color-cont
+{
+    padding-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.priority-color
+{
+    height: 2.5rem;
+    width: 5.5rem;
+}
+
