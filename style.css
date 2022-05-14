@@ -95,6 +95,7 @@ body
 {
     outline: none;
     resize: none;
+    border: none;
     background-color:beige;
     height: 100%;
     width: 75%;
@@ -125,6 +126,7 @@ body
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .ticket-cont
@@ -142,13 +144,18 @@ body
 .ticket-id
 {
     height: 1rem;
+
 }
 
 .task-area
 {
-    height: calc(100%-1rem-1.5rem);
-    padding: 5px;
+    height: 8rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
     font-size: 1.25rem;
+    overflow: auto;
+    outline: none;
+    word-break: break-all;
 }
 
 .active
@@ -159,6 +166,5 @@ body
 .lock-unlock
 {
     font-size: 1.5rem;
-    margin-top: 6rem;
     margin-left: 18.4rem;
 }

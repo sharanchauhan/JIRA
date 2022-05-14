@@ -10,6 +10,7 @@ let ticket_container=document.querySelector(".ticket-cont");
 let colors=['pink','yellow','red','orange'];
 let modalPriorityColor=colors[colors.length-1];
 
+
 addbtn.addEventListener("click",function()
 {
     if(addModal)
@@ -63,17 +64,20 @@ function createTicket(priorityColor,task){
         ticketColorBand.classList.add(nextColor);
     });
     let lockUnlockBtn=ticketCont.querySelector(".lock-unlock i");
+    let ticketTaskArea=ticketCont.querySelector(".task-area");
     lockUnlockBtn.addEventListener("click",function()
     {
         if(lockUnlockBtn.classList.contains("fa-lock"))
         {
             lockUnlockBtn.classList.remove("fa-lock");
             lockUnlockBtn.classList.add("fa-unlock");
+            ticketTaskArea.setAttribute("contenteditable","true");
         }
         else
         {
             lockUnlockBtn.classList.remove("fa-unlock");
             lockUnlockBtn.classList.add("fa-lock");
+            ticketTaskArea.setAttribute("contenteditable","false");
         }
     });
 }
