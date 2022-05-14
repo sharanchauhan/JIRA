@@ -9,7 +9,7 @@ let removeFlag=false;
 let ticket_container=document.querySelector(".ticket-cont");
 let colors=['pink','yellow','red','orange'];
 let modalPriorityColor=colors[colors.length-1];
-
+var uid = new ShortUniqueId();
 
 addbtn.addEventListener("click",function()
 {
@@ -34,6 +34,7 @@ modalCont.addEventListener("keydown",function(e){
 })
 
 function createTicket(priorityColor,task){
+    let id=uid();
     // <div class="ticket-cont">
     //         <div class="ticket-color"></div>
     //         <div class="ticket-id">#qzu03</div>
@@ -42,7 +43,7 @@ function createTicket(priorityColor,task){
     let ticketCont = document.createElement("div");
     ticketCont.setAttribute('class','ticket-cont');
     ticketCont.innerHTML = `<div class="ticket-color ${priorityColor}"></div>
-                            <div class="ticket-id">#qzu03</div>
+                            <div class="ticket-id"> #${id}</div>
                             <div class="task-area">${task}</div>
                             <div class="lock-unlock"><i class="fa fa-lock"></i></div>`
     mainCont.appendChild(ticketCont);

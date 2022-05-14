@@ -143,13 +143,17 @@ body
 
 .ticket-id
 {
-    height: 1rem;
-
+    height: 1.5rem;
+    font-weight: 600;
+    font-size: .9rem;
+    color: #141E27;
+    margin-left: 0.3rem;
+    margin-top: 0.3rem;
 }
 
 .task-area
 {
-    height: 8rem;
+    height: 7rem;
     padding-left: 0.3rem;
     padding-right: 0.3rem;
     font-size: 1.25rem;
