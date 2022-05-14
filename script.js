@@ -4,10 +4,11 @@ let mainCont = document.querySelector(".main-cont")
 let taskAreaCont=document.querySelector(".textarea-cont")
 let allPriorityColor=document.querySelectorAll(".priority-color");
 let addModal=true;
-let modalPriorityColor='orange'
 let removeBtn=document.querySelector(".delete-btn");
 let removeFlag=false;
 let ticket_container=document.querySelector(".ticket-cont");
+let colors=['pink','yellow','red','orange'];
+let modalPriorityColor=colors[colors.length-1];
 
 addbtn.addEventListener("click",function()
 {
@@ -49,6 +50,16 @@ function createTicket(priorityColor,task){
         {
             ticketCont.remove();
         }
+    });
+    let ticketColorBand=document.querySelector(".ticket-color")
+    ticketColorBand.addEventListener("click",function()
+    {
+        let currentTicketColor=ticketColorBand.classList[1];
+        let currentTicketColorIdx=colors.indexOf(currentTicketColor);
+        let nextColorIdx=(currentTicketColorIdx+1)%colors.length;
+        let nextColor=colors[nextColorIdx];
+        ticketColorBand.classList.remove(currentTicketColor);
+        ticketColorBand.classList.add(nextColor);
     });
 }
 
