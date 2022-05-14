@@ -4,6 +4,8 @@ let mainCont = document.querySelector(".main-cont")
 let taskAreaCont=document.querySelector(".textarea-cont")
 let allPriorityColor=document.querySelectorAll(".priority-color");
 let addModal=true;
+let modalPriorityColor='lightgrey'
+
 addbtn.addEventListener("click",function()
 {
     if(addModal)
@@ -19,14 +21,14 @@ addbtn.addEventListener("click",function()
 
 modalCont.addEventListener("keydown",function(e){
     if(e.key == 'Enter'){
-        createTicket(taskAreaCont.value);
+        createTicket(modalPriorityColor,taskAreaCont.value);
         taskAreaCont.value = "";
         modalCont.style.display = "none";
         addModal = !addModal;
     }
 })
 
-function createTicket(task){
+function createTicket(priorityColor,task){
     // <div class="ticket-cont">
     //         <div class="ticket-color"></div>
     //         <div class="ticket-id">#qzu03</div>
@@ -34,7 +36,7 @@ function createTicket(task){
     //     </div>
     let ticketCont = document.createElement("div");
     ticketCont.setAttribute('class','ticket-cont');
-    ticketCont.innerHTML = `<div class="ticket-color"></div>
+    ticketCont.innerHTML = `<div class="ticket-color ${priorityColor}"></div>
                             <div class="ticket-id">#qzu03</div>
                             <div class="task-area">${task}</div>`
     mainCont.appendChild(ticketCont);
@@ -49,6 +51,7 @@ for(let i=0;i<allPriorityColor.length;i++)
             allPriorityColor[j].classList.remove("active");
         }
         allPriorityColor[i].classList.add("active");
+        modalPriorityColor=allPriorityColor[i].classList[0];
     })
 
 }
