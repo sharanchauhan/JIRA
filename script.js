@@ -2,6 +2,7 @@ let addbtn=document.querySelector(".add-btn")
 let modalCont=document.querySelector(".modal-cont")
 let mainCont = document.querySelector(".main-cont")
 let taskAreaCont=document.querySelector(".textarea-cont")
+let allPriorityColor=document.querySelectorAll(".priority-color");
 let addModal=true;
 addbtn.addEventListener("click",function()
 {
@@ -37,4 +38,17 @@ function createTicket(task){
                             <div class="ticket-id">#qzu03</div>
                             <div class="task-area">${task}</div>`
     mainCont.appendChild(ticketCont);
+}
+
+for(let i=0;i<allPriorityColor.length;i++)
+{
+    allPriorityColor[i].addEventListener("click",function()
+    {
+        for(let j=0;j<allPriorityColor.length;j++)
+        {
+            allPriorityColor[j].classList.remove("active");
+        }
+        allPriorityColor[i].classList.add("active");
+    })
+
 }
