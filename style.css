@@ -155,3 +155,10 @@ body
 {
     border: 2px solid black;
 }
+
+.lock-unlock
+{
+    font-size: 1.5rem;
+    margin-top: 6rem;
+    margin-left: 18.4rem;
+}
