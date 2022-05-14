@@ -5,13 +5,15 @@ body
 {
     margin: 0px;
     padding: 0px;
+    background-color: #B3E8E5;
 }
 .toolbox-container
 {
-    background-color:yellowgreen;
+    background-color:#2F8F9D;
     height: 5rem;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid black;
 }
 
 .toolbox-priority-container
@@ -20,6 +22,7 @@ body
     align-items: center;
     justify-content: space-around;
     background-color: beige;
+    border: 1px solid black;
     height: 3rem;
     width: 18rem;
     margin-left: 5rem;
@@ -27,6 +30,7 @@ body
 
 .action-btn-container
 {
+    border: 1px solid black;
     height: 3rem;
     background-color: beige;
     width: 10rem;
@@ -42,24 +46,24 @@ body
     width: 3rem;
 }
 
-.lightpink
+.pink
 {
-    background-color: lightpink;
+    background-color: pink;
 }
 
-.lightblue
+.yellow
 {
-    background-color: lightskyblue;
+    background-color: yellow;
 }
 
-.lightgreen
+.red
 {
-    background-color: lightgreen;
+    background-color: red;
 }
 
-.lightgrey
+.orange
 {
-    background-color: lightgrey;
+    background-color: orange;
 }
 
 .add-btn
@@ -74,21 +78,21 @@ body
 
 .modal-cont
 {
-    background-color: beige;
+    background-color: #2F8F9D;
     display: none;
     height: 35vh;
     width: 50vw;
     position: absolute;
     top: 15rem;
     left: 25rem;
+    border: 1px solid black;
 }
 
 .textarea-cont
 {
     outline: none;
     resize: none;
-    border: none;
-    background-color:yellowgreen;
+    background-color:beige;
     height: 100%;
     width: 75%;
     padding: 2rem;
@@ -102,6 +106,7 @@ body
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    border-left: 1px solid black;
 }
 
 .priority-color

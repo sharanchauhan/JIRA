@@ -4,7 +4,7 @@ let mainCont = document.querySelector(".main-cont")
 let taskAreaCont=document.querySelector(".textarea-cont")
 let allPriorityColor=document.querySelectorAll(".priority-color");
 let addModal=true;
-let modalPriorityColor='lightgrey'
+let modalPriorityColor='orange'
 
 addbtn.addEventListener("click",function()
 {
