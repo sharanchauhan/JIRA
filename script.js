@@ -12,36 +12,30 @@ let modalPriorityColor=colors[colors.length-1];
 var uid = new ShortUniqueId();
 let ticketArr=[];
 
-for(let i=0;i<toolBoxColors.length;i++)
-{
-    toolBoxColors[i].addEventListener("click",function()
-    {
-        let currentColor=toolBoxColors[i].classList[1];
-        let filteredArr=[];
-        for (let i=0;i<ticketArr.length;i++) 
-        {
-            if (ticketArr[i].color == currentColor) 
-            {
+for (let i = 0; i < toolBoxColors.length; i++) {
+    toolBoxColors[i].addEventListener("click", function () {
+        let currentColor = toolBoxColors[i].classList[1];
+        let filteredArr = [];
+        for (let i = 0; i < ticketArr.length; i++) {
+            if (ticketArr[i].color == currentColor) {
                 filteredArr.push(ticketArr[i]);
             }
         }
-        let allTickets=document.querySelectorAll(".ticket-cont");
-        for(let j=0;j<allTickets.length;j++)
-        {
+        // console.log(filteredArr);
+        let allTickets = document.querySelectorAll(".ticket-cont");
+        for (let j = 0; j < allTickets.length; j++) {
             allTickets[j].remove();
         }
-        for(let j=0;j<filteredArr.length;j++)
-        {
-            let ticket=filteredArr[i];
-            let color=ticket.color;
-            let task=ticket.task;
-            let id=ticket.id;
-            createTicket(color,task,id);
+        for (let i = 0; i < filteredArr.length; i++) {
+            let ticket = filteredArr[i];
+            let color = ticket.color;
+            let task = ticket.task;
+            let id = ticket.id;
+            createTicket(color, task, id)
         }
-    });
+    })
 
-    toolBoxColors[i].addEventListener("dblclick",function()
-    {
+    toolBoxColors[i].addEventListener("dblclick",function(){
         let allTickets = document.querySelectorAll(".ticket-cont");
         for (let j = 0; j < allTickets.length; j++) {
             allTickets[j].remove();
@@ -53,7 +47,7 @@ for(let i=0;i<toolBoxColors.length;i++)
             let id = ticket.id;
             createTicket(color, task, id)
         }
-    });
+    })
 }
 
 addbtn.addEventListener("click",function()
