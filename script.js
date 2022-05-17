@@ -104,7 +104,19 @@ function createTicket(priorityColor,task,ticketId){
     {
         if(removeFlag)
         {
+            // Remove from UI
             ticketCont.remove();
+            // Remove from ticketArr
+            let ticketIdx;
+            for(let i=0;i<ticketArr.length;i++)
+            {
+                if(ticketArr[i].id==id)
+                {
+                    ticketIdx = i;
+                    break;
+                }
+            }
+            ticketArr.splice(ticketIdx,1);
         }
     });
     let ticketColorBand=ticketCont.querySelector(".ticket-color")
