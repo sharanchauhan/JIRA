@@ -107,17 +107,16 @@ function createTicket(priorityColor,task,ticketId){
             ticketCont.remove();
         }
     });
-    let ticketColorBand = ticketCont.querySelector(".ticket-color");
-    ticketColorBand.addEventListener("click", function () {
-        //update UI
-        let currentTicketColor = ticketColorBand.classList[1];
-        let currentTicketColorIdx = -1;
-        currentTicketColorIdx=colors.indexOf(currentTicketColor);
-        let nextColorIdx = (currentTicketColorIdx + 1) % colors.length;
-        let nextColor = colors[nextColorIdx];
+    let ticketColorBand=ticketCont.querySelector(".ticket-color")
+    ticketColorBand.addEventListener("click",function()
+    {
+        let currentTicketColor=ticketColorBand.classList[1];
+        let currentTicketColorIdx=colors.indexOf(currentTicketColor);
+        let nextColorIdx=(currentTicketColorIdx+1)%colors.length;
+        let nextColor=colors[nextColorIdx];
         ticketColorBand.classList.remove(currentTicketColor);
         ticketColorBand.classList.add(nextColor);
-        //update ticketArr as well
+        // Update ticketArr as well
         let ticketIdx;
         for(let i=0;i<ticketArr.length;i++){
             if(ticketArr[i].id==id){
@@ -126,12 +125,29 @@ function createTicket(priorityColor,task,ticketId){
             }
         }
         ticketArr[ticketIdx].color = nextColor;
-   
+    });
+    let lockUnlockBtn=ticketCont.querySelector(".lock-unlock i");
+    let ticketTaskArea=ticketCont.querySelector(".task-area");
+    lockUnlockBtn.addEventListener("click",function()
+    {
+        if(lockUnlockBtn.classList.contains("fa-lock"))
+        {
+            lockUnlockBtn.classList.remove("fa-lock");
+            lockUnlockBtn.classList.add("fa-unlock");
+            ticketTaskArea.setAttribute("contenteditable","true");
+        }
+        else
+        {
+            lockUnlockBtn.classList.remove("fa-unlock");
+            lockUnlockBtn.classList.add("fa-lock");
+            ticketTaskArea.setAttribute("contenteditable","false");
+        }
     });
     if(ticketId==undefined)
     {
         ticketArr.push({"color":priorityColor,"task":task,"id":id});
     }
+    console.log(ticketArr);
 }
 
 for(let i=0;i<allPriorityColor.length;i++)
