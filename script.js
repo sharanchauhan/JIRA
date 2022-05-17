@@ -12,6 +12,17 @@ let modalPriorityColor=colors[colors.length-1];
 var uid = new ShortUniqueId();
 let ticketArr=[];
 
+if(localStorage.getItem("tickets")){
+    let str = localStorage.getItem("tickets");
+    let arr = JSON.parse(str);
+    ticketArr = arr;
+    for(let i=0;i<arr.length;i++){
+        let ticketObj = arr[i];
+        createTicket(ticketObj.color,ticketObj.task,ticketObj.id);
+    }
+}
+
+
 for(let i=0;i<toolBoxColors.length;i++)
 {
     toolBoxColors[i].addEventListener("click",function()
@@ -107,16 +118,9 @@ function createTicket(priorityColor,task,ticketId){
             // Remove from UI
             ticketCont.remove();
             // Remove from ticketArr
-            let ticketIdx;
-            for(let i=0;i<ticketArr.length;i++)
-            {
-                if(ticketArr[i].id==id)
-                {
-                    ticketIdx = i;
-                    break;
-                }
-            }
+            let ticketIdx=getIndex(id);
             ticketArr.splice(ticketIdx,1);
+            updateLocalStorage();
         }
     });
     let ticketColorBand=ticketCont.querySelector(".ticket-color")
@@ -129,14 +133,9 @@ function createTicket(priorityColor,task,ticketId){
         ticketColorBand.classList.remove(currentTicketColor);
         ticketColorBand.classList.add(nextColor);
         // Update ticketArr as well
-        let ticketIdx;
-        for(let i=0;i<ticketArr.length;i++){
-            if(ticketArr[i].id==id){
-                ticketIdx = i;
-                break;
-            }
-        }
+        let ticketIdx=getIndex(id);
         ticketArr[ticketIdx].color = nextColor;
+        updateLocalStorage();
     });
     let lockUnlockBtn=ticketCont.querySelector(".lock-unlock i");
     let ticketTaskArea=ticketCont.querySelector(".task-area");
@@ -154,18 +153,14 @@ function createTicket(priorityColor,task,ticketId){
             lockUnlockBtn.classList.add("fa-lock");
             ticketTaskArea.setAttribute("contenteditable","false");
         }
-        let ticketIdx;
-        for(let i=0;i<ticketArr.length;i++){
-            if(ticketArr[i].id==id){
-                ticketIdx = i;
-                break;
-            }
-        }
+        let ticketIdx=getIndex(id);
         ticketArr[ticketIdx].task=ticketTaskArea.textContent;
+        updateLocalStorage();
     });
     if(ticketId==undefined)
     {
         ticketArr.push({"color":priorityColor,"task":task,"id":id});
+        updateLocalStorage();
     }
     console.log(ticketArr);
 }
@@ -196,3 +191,22 @@ removeBtn.addEventListener("click",function()
     }
     removeFlag=!removeFlag;
 })
+
+// Function to get the index
+function getIndex(id) 
+{
+    for(let i=0;i<ticketArr.length;i++)
+    {
+        if(ticketArr[i].id==id)
+        {
+            return i;
+        }
+    }
+}
+
+// Function to update the local storage
+function updateLocalStorage()
+{
+    let stringify=JSON.stringify(ticketArr);
+    localStorage.setItem("tickets",stringify);
+}
