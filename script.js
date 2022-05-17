@@ -142,6 +142,14 @@ function createTicket(priorityColor,task,ticketId){
             lockUnlockBtn.classList.add("fa-lock");
             ticketTaskArea.setAttribute("contenteditable","false");
         }
+        let ticketIdx;
+        for(let i=0;i<ticketArr.length;i++){
+            if(ticketArr[i].id==id){
+                ticketIdx = i;
+                break;
+            }
+        }
+        ticketArr[ticketIdx].task=ticketTaskArea.textContent;
     });
     if(ticketId==undefined)
     {
